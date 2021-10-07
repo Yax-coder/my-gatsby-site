@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "name": "LinkedIn",
+    "link": "https://www.linkedin.com/in/yahya-ahmad-b4813a182/",
+    "icon": "/icons/linkedin.svg"
+  },
+  {
+    "id": 1,
+    "name": "Github",
+    "link": "https://github.com/Yax-coder",
+    "icon": "/icons/iconmonstr-github-5.svg"
+  },
+  {
+    "id": 3,
+    "name": "Twitter",
+    "link": "https://twitter.com/Yahya_Ahmad_u",
+    "icon": "/icons/twitter-6.svg"
+  },
+  {
+    "id": 3,
+    "name": "Gmail",
+    "link": "https://mail.google.com/mail/?view=cm&fs=1&to=ahmadyahya962@gmail.com&su=SUBJECT&body=BODY&bcc=ahmadyahya962@gmail.com",
+    "icon": "/icons/gmail-icon.svg"
+  }
+]
