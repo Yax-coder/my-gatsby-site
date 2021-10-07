@@ -1,62 +1,38 @@
-const config = require("./src/data/config");
-
-require("dotenv").config({
-	path: `.env`,
-});
-
 module.exports = {
-	siteMetadata: {
-		title: config.defaultTitle,
-		description: config.defaultDescription,
-		author: config.author,
-	},
-	plugins: [
-		"gatsby-plugin-react-helmet",
-		"gatsby-plugin-styled-components",
-		{
-			resolve: `gatsby-plugin-canonical-urls`,
-			options: {
-				siteUrl: config.url,
-			},
-		},
-		{
-			resolve: "gatsby-source-graphql",
-			options: {
-				typeName: "GitHub",
-				fieldName: "github",
-				url: "https://api.github.com/graphql",
-				headers: {
-					Authorization: `bearer ${process.env.PORTFOLIO_GITHUB_TOKEN}`,
-				},
-				fetchOptions: {},
-			},
-		},
-		{
-			resolve: "gatsby-plugin-nprogress",
-			options: {
-				color: config.themeColor,
-				showSpinner: false,
-			},
-		},
-		{
-			resolve: "gatsby-plugin-google-analytics",
-			options: {
-				trackingId: config.googleAnalyticsID,
-				head: true,
-			},
-		},
-		{
-			resolve: "gatsby-plugin-manifest",
-			options: {
-				name: config.defaultTitle,
-				short_name: "starter",
-				start_url: "/",
-				background_color: config.backgroundColor,
-				theme_color: config.themeColor,
-				display: "minimal-ui",
-				icon: "./static/favicon/favicon-512.png",
-			},
-		},
-		"gatsby-plugin-offline",
-	],
-};
+  siteMetadata: {
+    title: `Gatsby Default Starter`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@gatsbyjs`,
+    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+  },
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        // This will impact how browsers show your PWA/website
+        // https://css-tricks.com/meta-theme-color-and-trickery/
+        // theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
+  ],
+}
