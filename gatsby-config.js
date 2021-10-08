@@ -11,18 +11,17 @@ module.exports = {
     author: config.author,
   },
   plugins: [
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        typeName: "GitHub",
-        fieldName: "github",
-        url: "https://api.github.com/graphql",
-        headers: {
-          Authorization: `bearer ${process.env.PORTFOLIO_GITHUB_TOKEN}`,
-        },
-        fetchOptions: {},
-      },
-    },
+   {
+  resolve: "gatsby-source-graphql",
+ options: {
+  // This type will contain remote schema Query type
+  typeName: "Query",
+  // This is field under which it's accessible
+  fieldName: "blah",
+  // Url to query from
+  url: "http://10.113.34.59:4000/graphql",
+  // this is URL where served exposed its service in local
+ },
     {
       resolve: "gatsby-source-graphql",
       options: {
